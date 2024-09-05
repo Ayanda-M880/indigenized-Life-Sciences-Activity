@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardians of the Forest Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+	     margin: 0;
+            padding: 0;
+            background-image: url('leaves.jpeg'); /* Add your background image here */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h3 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .answers {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answers li {
+            margin-bottom: 15px;
+        }
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .badge {
+            display: none;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body><body text="black">
+<div class="quiz-introduction">
+    <button onclick="startQuiz()">START THE QUIZ</button>
+</div>
+<div class="quiz-container">
+	<h1> Life Sciences: Unit 4 Quiz</h1>
+    <h1>Guardians of the Forest</h1>
+<h2>Welcome to the Guardians of the Forest Quiz!</h2>
+    <p><i>
+        You are about to embark on a journey to become a <strong>Guardian of the Forest</strong>. In this quiz, you will explore the rich knowledge of indigenous communities and how they have long used plants and sustainable practices to protect and heal the environment.
+    </p>
+    <p>
+        Each question will test your understanding of indigenous knowledge and science, and for every correct answer, you will unlock a special badge that recognizes your growing expertise.
+    </p>
+    <p>
+        Are you ready to learn and become a true <strong>Guardian of the Forest</strong>? Let's begin!
+    </i></p>
+<br/>
+<br/>
+    <div id="quiz">
+        <font size="4"><b><div class="question" id="question"></div></b></font>
+        <ul class="answers" id="answers">
+        </ul>
+        <button id="nextBtn" onclick="nextQuestion()">Next Question</button>
+        <p id="feedback" class="correct"></p>
+        <div id="badge" class="badge"></div>
+    </div>
+</div>
+
+<script src="quiz.js"></script>
+</body>
+</html>

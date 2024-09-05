@@ -1,0 +1,27 @@
+.quiz-introduction {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    background-color: #eef5ff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-introduction h2 {
+    margin-bottom: 10px;
+}
+
+.quiz-introduction button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.quiz-container {
+    display: none;
+}
