@@ -7,90 +7,70 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-	     margin: 0;
-            padding: 0;
+            padding: 2;
             background-image: url('leaves.jpeg'); /* Add your background image here */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-color: #f0f8ff;
-            margin: 0;
-            padding: 20px;
+            margin: 2;
+            padding: 40px;
         }
-        .quiz-container {
+        .quiz-container, .quiz-introduction {
+            background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+            padding: 40px;
+            border-radius: 40px;
             max-width: 600px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h3 {
+            margin: 60px auto;
             text-align: center;
         }
-        .question {
-            margin-bottom: 20px;
-        }
-        .answers {
-            list-style-type: none;
-            padding: 0;
-        }
-        .answers li {
-            margin-bottom: 15px;
+        .badge-img {
+            display: none; /* Hidden until earned */
+            margin-top: 20px;
         }
         button {
-            display: block;
-            margin: 30px auto;
-            padding: 10px 20px;
+            padding: 20px 60px;
             background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
-        .badge {
-            display: none;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .correct {
-            color: green;
-        }
-        .incorrect {
-            color: red;
-        }
     </style>
 </head>
-<body><body text="black">
-<div class="quiz-introduction">
-    <button onclick="startQuiz()">START THE QUIZ</button>
-</div>
-<div class="quiz-container">
-	<h1> Life Sciences: Unit 4 Quiz</h1>
-    <h1>Guardians of the Forest</h1>
-<h2>Welcome to the Guardians of the Forest Quiz!</h2>
-    <p><i>
-        You are about to embark on a journey to become a <strong>Guardian of the Forest</strong>. In this quiz, you will explore the rich knowledge of indigenous communities and how they have long used plants and sustainable practices to protect and heal the environment.
-    </p>
-    <p>
-        Each question will test your understanding of indigenous knowledge and science, and for every correct answer, you will unlock a special badge that recognizes your growing expertise.
-    </p>
-    <p>
-        Are you ready to learn and become a true <strong>Guardian of the Forest</strong>? Let's begin!
-    </i></p>
-<br/>
-<br/>
-    <div id="quiz">
-        <font size="4"><b><div class="question" id="question"></div></b></font>
-        <ul class="answers" id="answers">
-        </ul>
-        <button id="nextBtn" onclick="nextQuestion()">Next Question</button>
-        <p id="feedback" class="correct"></p>
-        <div id="badge" class="badge"></div>
-    </div>
-</div>
 
-<script src="quiz.js"></script>
+<body>
+
+    <!-- Introduction Section -->
+    <div class="quiz-introduction">
+        <h2>Welcome to the Guardians of the Forest Quiz!</h2>
+        <p>Answer the questions correctly to earn badges and redeem them at the end!</p>
+        <button onclick="startQuiz()">Start the Quiz</button>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="quiz-container" id="quiz-container" style="display: none;">
+        <h1>Guardians of the Forest Quiz</h1>
+        <b><div id="question"></div></b>
+        <ul id="answers"></ul>
+        <button id="nextBtn" onclick="nextQuestion()">Next Question</button>
+        <p id="feedback"></p>
+
+        <!-- Display badge image when earned -->
+        <div id="badgeDisplay">
+            <img id="badgeImg" class="badge-img" src="" alt="Badge Image">
+        </div>
+    </div>
+
+    <!-- Badge Redeem Section -->
+    <div id="redeem-section" style="display: none;">
+        <h2>Congratulations! You've earned these badges:</h2>
+        <div id="earned-badges"></div>
+        <button onclick="redeemBadges()">Redeem All Badges</button>
+    </div>
+
+    <script src="quiz.js"></script>
+
 </body>
 </html>
